@@ -58,6 +58,23 @@
             font-size: 0.95em;
         }
 
+        .filter-group select,
+        .filter-group input {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            background: white;
+            transition: border-color 0.3s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        /* Multi-select styles */
         .multi-select-wrapper {
             position: relative;
         }
@@ -134,6 +151,17 @@
         .multi-select-option input[type="checkbox"] {
             margin-right: 10px;
             cursor: pointer;
+        }
+
+        .multi-select-option.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .price-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         #searchBox {
@@ -224,6 +252,7 @@
         .rarity-legendary { background: #ff9800; color: white; }
 
         .clear-filters {
+            width: 100%;
             padding: 10px 20px;
             background: #f44336;
             color: white;
@@ -265,11 +294,18 @@
                     <label for="searchBox">🔍 Search:</label>
                     <input type="text" id="searchBox" placeholder="Search items...">
                 </div>
+                
+                <div class="filter-group">
+                    <label for="typeFilter">Type:</label>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
             </div>
             
             <div class="filter-row">
                 <div class="filter-group">
-                    <label>Rarity:</label>
+                    <label>Rarity (Multi-select):</label>
                     <div class="multi-select-wrapper">
                         <div class="multi-select-display" id="rarityDisplay">
                             <span class="selected-items">All Rarities</span>
@@ -280,7 +316,7 @@
                 </div>
 
                 <div class="filter-group">
-                    <label>Category:</label>
+                    <label>Category (Multi-select):</label>
                     <div class="multi-select-wrapper">
                         <div class="multi-select-display" id="categoryDisplay">
                             <span class="selected-items">All Categories</span>
@@ -291,7 +327,16 @@
                 </div>
 
                 <div class="filter-group">
-                    <label>&nbsp;</label>
+                    <label for="priceFilter">Price Range:</label>
+                    <div class="price-inputs">
+                        <input type="number" id="minPrice" placeholder="Min ($)">
+                        <input type="number" id="maxPrice" placeholder="Max ($)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-row">
+                <div class="filter-group">
                     <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
                 </div>
             </div>
@@ -310,8 +355,18 @@
         let allCategories = new Set();
         let availableCategories = new Set();
 
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.multi-select-dropdown').forEach(dd => {
+                dd.classList.remove('active');
+            });
+            document.querySelectorAll('.multi-select-display').forEach(dd => {
+                dd.classList.remove('active');
+            });
+        });
+
         // Multi-select functionality
-        function initMultiSelect(displayId, dropdownId, onChange) {
+        function initMultiSelect(displayId, dropdownId) {
             const display = document.getElementById(displayId);
             const dropdown = document.getElementById(dropdownId);
             
@@ -332,19 +387,7 @@
                     }
                 });
             });
-
-            return { display, dropdown, onChange };
         }
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.multi-select-dropdown').forEach(dd => {
-                dd.classList.remove('active');
-            });
-            document.querySelectorAll('.multi-select-display').forEach(dd => {
-                dd.classList.remove('active');
-            });
-        });
 
         function populateRarityFilter() {
             const rarities = [...new Set(allItems.map(item => item.rarity))].sort();
@@ -360,25 +403,27 @@
 
         function populateCategoryFilter() {
             const dropdown = document.getElementById('categoryDropdown');
-            const categories = Array.from(availableCategories).sort();
+            const categories = Array.from(allCategories).sort();
             
-            dropdown.innerHTML = categories.map(category => `
-                <label class="multi-select-option">
-                    <input type="checkbox" value="${category}" 
-                           ${selectedCategories.has(category) && availableCategories.has(category) ? 'checked' : ''}
-                           ${!availableCategories.has(category) ? 'disabled' : ''}
-                           onchange="handleCategoryChange()">
-                    <span>${category}</span>
-                </label>
-            `).join('');
+            dropdown.innerHTML = categories.map(category => {
+                const isAvailable = availableCategories.has(category);
+                const isSelected = selectedCategories.has(category);
+                return `
+                    <label class="multi-select-option ${!isAvailable ? 'disabled' : ''}">
+                        <input type="checkbox" value="${category}" 
+                               ${isSelected && isAvailable ? 'checked' : ''}
+                               ${!isAvailable ? 'disabled' : ''}
+                               onchange="handleCategoryChange()">
+                        <span>${category}</span>
+                    </label>
+                `;
+            }).join('');
         }
 
         function updateAvailableCategories() {
             if (selectedRarities.size === 0) {
-                // If no rarity selected, show all categories
                 availableCategories = new Set(allCategories);
             } else {
-                // Show only categories that exist for selected rarities
                 availableCategories = new Set();
                 allItems.forEach(item => {
                     if (selectedRarities.has(item.rarity)) {
@@ -404,6 +449,7 @@
             updateDisplayText('rarityDisplay', selectedRarities, 'All Rarities');
             updateAvailableCategories();
             populateCategoryFilter();
+            updateDisplayText('categoryDisplay', selectedCategories, 'All Categories');
             filterItems();
         }
 
@@ -424,6 +470,7 @@
             if (selectedSet.size === 0) {
                 textSpan.textContent = defaultText;
                 textSpan.style.color = '#555';
+                textSpan.style.fontWeight = 'normal';
             } else {
                 textSpan.textContent = Array.from(selectedSet).join(', ');
                 textSpan.style.color = '#2a5298';
@@ -435,6 +482,9 @@
             selectedRarities.clear();
             selectedCategories.clear();
             document.getElementById('searchBox').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
             
             document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
             
@@ -446,15 +496,42 @@
             filterItems();
         }
 
+        function parsePrice(priceStr) {
+            return parseInt(priceStr.replace(/[$,]/g, '')) || 0;
+        }
+
+        function populateFilters() {
+            const typeFilter = document.getElementById('typeFilter');
+            
+            if (!typeFilter) {
+                console.error('❌ typeFilter element not found!');
+                return;
+            }
+
+            const types = [...new Set(allItems.map(item => item.category))].sort();
+            
+            typeFilter.innerHTML = '<option value="">All Types</option>' + 
+                types.map(type => `<option value="${type}">${type}</option>`).join('');
+
+            console.log('✅ Filters populated');
+        }
+
         function filterItems() {
             const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const typeFilter = document.getElementById('typeFilter').value;
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
             
             const filteredItems = allItems.filter(item => {
                 const matchesSearch = item.name.toLowerCase().includes(searchTerm);
+                const matchesType = !typeFilter || item.category === typeFilter;
                 const matchesRarity = selectedRarities.size === 0 || selectedRarities.has(item.rarity);
                 const matchesCategory = selectedCategories.size === 0 || selectedCategories.has(item.category);
                 
-                return matchesSearch && matchesRarity && matchesCategory;
+                const itemPrice = parsePrice(item.sell_price);
+                const matchesPrice = itemPrice >= minPrice && itemPrice <= maxPrice;
+                
+                return matchesSearch && matchesType && matchesRarity && matchesCategory && matchesPrice;
             });
             
             renderItems(filteredItems);
@@ -514,11 +591,12 @@
                 allItems.forEach(item => allCategories.add(item.category));
                 availableCategories = new Set(allCategories);
                 
+                populateFilters();
                 populateRarityFilter();
                 populateCategoryFilter();
                 
-                initMultiSelect('rarityDisplay', 'rarityDropdown', handleRarityChange);
-                initMultiSelect('categoryDisplay', 'categoryDropdown', handleCategoryChange);
+                initMultiSelect('rarityDisplay', 'rarityDropdown');
+                initMultiSelect('categoryDisplay', 'categoryDropdown');
                 
                 renderItems(allItems);
                 
@@ -534,6 +612,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             init();
             document.getElementById('searchBox').addEventListener('input', filterItems);
+            document.getElementById('typeFilter').addEventListener('change', filterItems);
+            document.getElementById('minPrice').addEventListener('input', filterItems);
+            document.getElementById('maxPrice').addEventListener('input', filterItems);
             console.log('✅ Event listeners attached');
         });
     </script>
