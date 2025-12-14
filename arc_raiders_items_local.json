@@ -1,0 +1,1346 @@
+[
+  {
+    "icon": "icons\\Advanced_ARC_Powercell.png",
+    "name": "Advanced ARC Powercell",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Advanced_Electrical_Components.png",
+    "name": "Advanced Electrical Components",
+    "rarity": "Rare",
+    "sell_price": "$1750",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Advanced_Mechanical_Components.png",
+    "name": "Advanced Mechanical Components",
+    "rarity": "Rare",
+    "sell_price": "$1750",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Agave.png",
+    "name": "Agave",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Agave_Juice.png",
+    "name": "Agave Juice",
+    "rarity": "Common",
+    "sell_price": "$1800",
+    "category": "Quick Use"
+  },
+  {
+    "icon": "icons\\Air_Freshener.png",
+    "name": "Air Freshener",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Alarm_Clock.png",
+    "name": "Alarm Clock",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Antiseptic.png",
+    "name": "Antiseptic",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Apricot.png",
+    "name": "Apricot",
+    "rarity": "Uncomon",
+    "sell_price": "$640",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\ARC_Alloy.png",
+    "name": "ARC Alloy",
+    "rarity": "Uncommon",
+    "sell_price": "$200",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\ARC_Circuitry.png",
+    "name": "ARC Circuitry",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\ARC_Coolant.png",
+    "name": "ARC Coolant",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\ARC_Flex_Rubber.png",
+    "name": "ARC Flex Rubber",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\ARC_Motion_Core.png",
+    "name": "ARC Motion Core",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\ARC_Performance_Steel.png",
+    "name": "ARC Performance Steel",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\ARC_Powercell.png",
+    "name": "ARC Powercell",
+    "rarity": "Common",
+    "sell_price": "$270",
+    "category": "Misc"
+  },
+  {
+    "icon": "icons\\ARC_Synthetic_Resin.png",
+    "name": "ARC Synthetic Resin",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\ARC_Thermo_Lining.png",
+    "name": "ARC Thermo Lining",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Assorted_Seeds.png",
+    "name": "Assorted Seeds",
+    "rarity": "Common",
+    "sell_price": "$100",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Bastion_Cell.png",
+    "name": "Bastion Cell",
+    "rarity": "Epic",
+    "sell_price": "$5000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Battery.png",
+    "name": "Battery",
+    "rarity": "Uncommon",
+    "sell_price": "$250",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Bicycle_Pump.png",
+    "name": "Bicycle Pump",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Bloated_Tuna_Can.png",
+    "name": "Bloated Tuna Can",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Bombardier_Cell.png",
+    "name": "Bombardier Cell",
+    "rarity": "Epic",
+    "sell_price": "$5000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Breathtaking_Snow_Globe.png",
+    "name": "Breathtaking Snow Globe",
+    "rarity": "Epic",
+    "sell_price": "$7000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Broken_Flashlight.png",
+    "name": "Broken Flashlight",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Broken_Guidance_System.png",
+    "name": "Broken Guidance System",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Broken_Handheld_Radio.png",
+    "name": "Broken Handheld Radio",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Broken_Taser.png",
+    "name": "Broken Taser",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Burned_ARC_Circuity.png",
+    "name": "Burned ARC Circuitry",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Camera_Lens.png",
+    "name": "Camera Lens",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Candle_Holder.png",
+    "name": "Candle Holder",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Canister.png",
+    "name": "Canister",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Cat_Bed.png",
+    "name": "Cat Bed",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Chemicals.png",
+    "name": "Chemicals",
+    "rarity": "Common",
+    "sell_price": "$50",
+    "category": "Basic Material"
+  },
+  {
+    "icon": "icons\\Coffee_Pot.png",
+    "name": "Coffee Pot",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Complex_Gun_Parts.png",
+    "name": "Complex Gun Parts",
+    "rarity": "Epic",
+    "sell_price": "$2000",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Coolant.png",
+    "name": "Coolant",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Cooling_Coil.png",
+    "name": "Cooling Coil",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Cooling_Fan.png",
+    "name": "Cooling Fan",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Cracked_Bioscanner.png",
+    "name": "Cracked Bioscanner",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Crude_Explosives.png",
+    "name": "Crude Explosives",
+    "rarity": "Uncommon",
+    "sell_price": "$270",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Crumpled_Plastic_Bottle.png",
+    "name": "Crumpled Plastic Bottle",
+    "rarity": "Uncommon",
+    "sell_price": "$270",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_ARC_Motion_Core.png",
+    "name": "Damaged ARC Motion Core",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_ARC_Powercell.png",
+    "name": "Damaged ARC Powercell",
+    "rarity": "Common",
+    "sell_price": "$293",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Fireball_Burner.png",
+    "name": "Damaged Fireball Burner",
+    "rarity": "Common",
+    "sell_price": "$270",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Heat_Sink.png",
+    "name": "Damaged Heat Sink",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Hornet_Driver.png",
+    "name": "Damaged Hornet Driver",
+    "rarity": "Common",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Rocketeer_Driver.png",
+    "name": "Damaged Rocketeer Driver",
+    "rarity": "Common",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Tick_Pod.png",
+    "name": "Damaged Tick Pod",
+    "rarity": "Common",
+    "sell_price": "$270",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Damaged_Wasp_Driver.png",
+    "name": "Damaged Wasp Driver",
+    "rarity": "Common",
+    "sell_price": "$270",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Dart_Board.png",
+    "name": "Dart Board",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Deflated_Football.png",
+    "name": "Deflated Football",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Degraded_ARC_Rubber.png",
+    "name": "Degraded ARC Rubber",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Diving_Goggles.png",
+    "name": "Diving Goggles",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Dog_Collar.png",
+    "name": "Dog Collar",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Dried_Out_ARC_Resin.png",
+    "name": "Dried-Out ARC Resin",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Duct_Tape.png",
+    "name": "Duct Tape",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Durable_Cloth.png",
+    "name": "Durable Cloth",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Electrical_Components.png",
+    "name": "Electrical Components",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Empty_Wine_Bottle.png",
+    "name": "Empty Wine Bottle",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Exodus_Modules.png",
+    "name": "Exodus Modules",
+    "rarity": "Epic",
+    "sell_price": "$2750",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Expired_Pasta.png",
+    "name": "Expired Pasta",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Expired_Respirator.png",
+    "name": "Expired Respirator",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Explosive_Compound.png",
+    "name": "Explosive Compound",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Fabric.png",
+    "name": "Fabric",
+    "rarity": "Common",
+    "sell_price": "$50",
+    "category": "Basic Material"
+  },
+  {
+    "icon": "icons\\Faded_Photograph.png",
+    "name": "Faded Photograph",
+    "rarity": "Common",
+    "sell_price": "$640",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Fertilizer.png",
+    "name": "Fertilizer",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Film_Reel.png",
+    "name": "Film reel",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Fine_Wristwatch.png",
+    "name": "Fine Wristwatch",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Fireball_Burner.png",
+    "name": "Fireball Burner",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Flow_Controller.png",
+    "name": "Flow Controller",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Frequency_Modulation_Box.png",
+    "name": "Frequency Modulation Box",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Fried_Motherboard.png",
+    "name": "Fried Motherboard",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\FryingPanPNG.png",
+    "name": "Frying Pan",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Garlic_Press.png",
+    "name": "Garlic Press",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Geiger_Counter.png",
+    "name": "Geiger Counter",
+    "rarity": "Epic",
+    "sell_price": "$3500",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Great_Mullein.png",
+    "name": "Great Mullein",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Headphones.png",
+    "name": "Headphones",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Heavy_Gun_Parts.png",
+    "name": "Heavy Gun Parts",
+    "rarity": "Rare",
+    "sell_price": "$700",
+    "category": "TopSide Material"
+  },
+  {
+    "icon": "icons\\Hornet_Driver.png",
+    "name": "Hornet Driver",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\HouseholdCleanerPNG.png",
+    "name": "Household Cleaner",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Humidifier.png",
+    "name": "Humidifier",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ice_Cream_Scooper.png",
+    "name": "Ice Cream Scooper",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Impure_ARC_Coolant.png",
+    "name": "Impure ARC Coolant",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Industrial_Battery.png",
+    "name": "Industrial Battery",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Industrial_Charger.png",
+    "name": "Industrial Charger",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Industrial_Magnet.png",
+    "name": "Industrial Magnet",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ion_Sputter.png",
+    "name": "Ion Sputter",
+    "rarity": "Epic",
+    "sell_price": "$6000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Laboratory_Reagents.png",
+    "name": "Laboratory Reagents",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Lances_Mixtape.png",
+    "name": "Lance's Mixtape (5th Edition)",
+    "rarity": "Epic",
+    "sell_price": "$10000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Leaper_Pulse_Unit.png",
+    "name": "Leaper Pulse Unit",
+    "rarity": "Epic",
+    "sell_price": "$5000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Lemon.png",
+    "name": "Lemon",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Light_Gun_Parts.png",
+    "name": "Light Gun Parts",
+    "rarity": "Rare",
+    "sell_price": "$700",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Light_Bulb.png",
+    "name": "Light Bulb",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Magnet.png",
+    "name": "Magnet",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Magnetic_Accelerator.png",
+    "name": "Magnetic Accelerator",
+    "rarity": "Epic",
+    "sell_price": "$5500",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Magnetron.png",
+    "name": "Magnetron",
+    "rarity": "Epic",
+    "sell_price": "$6000",
+    "category": "Recycleable"
+  },
+  {
+    "icon": "icons\\Matriarch_Reactor.png",
+    "name": "Matriarch Reactor",
+    "rarity": "Legendary",
+    "sell_price": "$13000",
+    "category": "Recycleable"
+  },
+  {
+    "icon": "icons\\Mechanical_Components.png",
+    "name": "Mechanical Components",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Medium_Gun_Parts.png",
+    "name": "Medium Gun Parts",
+    "rarity": "Rare",
+    "sell_price": "$700",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Metal_Brackets.png",
+    "name": "Metal Brackets",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Metal_Parts.png",
+    "name": "Metal Parts",
+    "rarity": "Common",
+    "sell_price": "$75",
+    "category": "Basic Material"
+  },
+  {
+    "icon": "icons\\Microscope.png",
+    "name": "Microscope",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Mini_Centrifuge.png",
+    "name": "Mini Centrifuge",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Mod_Components.png",
+    "name": "Mod Components",
+    "rarity": "Rare",
+    "sell_price": "$1750",
+    "category": "Refined Material"
+  },
+  {
+    "icon": "icons\\Moss.png",
+    "name": "Moss",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Motor.png",
+    "name": "Motor",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Mushroom.png",
+    "name": "Mushroom",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Misc"
+  },
+  {
+    "icon": "icons\\Music_Box.png",
+    "name": "Music Box",
+    "rarity": "Rare",
+    "sell_price": "$5000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Music_Album.png",
+    "name": "Music Album",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Number_Plate.png",
+    "name": "Number Plate",
+    "rarity": "Uncommon",
+    "sell_price": "$270",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Oil.png",
+    "name": "Oil",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Olives.png",
+    "name": "Olives",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Painted_Box.png",
+    "name": "Painted Box",
+    "rarity": "Common",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Plastic_Parts.png",
+    "name": "Plastic Parts",
+    "rarity": "Common",
+    "sell_price": "$60",
+    "category": "Basic Material"
+  },
+  {
+    "icon": "icons\\Playing_Cards.png",
+    "name": "Playing Cards",
+    "rarity": "Rare",
+    "sell_price": "$5000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Pottery.png",
+    "name": "Pottery",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Polluted_Air_Filter.png",
+    "name": "Polluted Air Filter",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Pop_Trigger.png",
+    "name": "Pop Trigger",
+    "rarity": "Common",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Portable_TV.png",
+    "name": "Portable TV",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Poster_Of_Natural_Wonders.png",
+    "name": "Poster of Natural Wonders",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Power_Bank.png",
+    "name": "Power Bank",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Power_Cable.png",
+    "name": "Power Cable",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\PowerRod.png",
+    "name": "Power Rod",
+    "rarity": "Epic",
+    "sell_price": "$5500",
+    "category": "Advanced Material"
+  },
+  {
+    "icon": "icons\\Prickly_Pear.png",
+    "name": "Prickly Pear",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Misc"
+  },
+  {
+    "icon": "icons\\Processor.png",
+    "name": "Processor",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Projector.png",
+    "name": "Projector",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Queen_Reactor.png",
+    "name": "Queen Reactor",
+    "rarity": "Legendary",
+    "sell_price": "$13,000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Radio.png",
+    "name": "Radio",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Radio_Relay.png",
+    "name": "Radio Relay",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Resin.png",
+    "name": "Resin",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Recorder.png",
+    "name": "Recorder",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Red_Coral_Jewelry.png",
+    "name": "Red Coral Jewlery",
+    "rarity": "Rare",
+    "sell_price": "$5000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Remote_Control.png",
+    "name": "Remote Control",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ripped_Safety_Vest.png",
+    "name": "Ripped Safety Vest",
+    "rarity": "Uncommon",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rocketeet_Driver.png",
+    "name": "Rocketeer Driver",
+    "rarity": "Epic",
+    "sell_price": "$5000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rocket_Thruster.png",
+    "name": "Rocket Thruster",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Roots.png",
+    "name": "Roots",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Nature"
+  },
+  {
+    "icon": "icons\\Rope.png",
+    "name": "Rope",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Rosary.png",
+    "name": "Rosary",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Rotary_Encoder.png",
+    "name": "Rotary Encoder",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rubber_Duck.png",
+    "name": "Rubber Duck",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Rubber_Pad.png",
+    "name": "Rubber Pad",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rubber_Parts.png",
+    "name": "Rubber Parts",
+    "rarity": "Common",
+    "sell_price": "$50",
+    "category": "Basic Material"
+  },
+  {
+    "icon": "icons\\Ruined_Accordon.png",
+    "name": "Ruined Accordion",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ruined_Baton.png",
+    "name": "Ruined Baton",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ruined_Handcuffs.png",
+    "name": "Ruined Handcuffs",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ruined_Parachute.png",
+    "name": "Ruined Parachute",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ruined_Riot_Shield.png",
+    "name": "Ruined Riot Shield",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Ruined_Tactical_Vest.png",
+    "name": "Ruined Tactical Vest",
+    "rarity": "Uncommon",
+    "sell_price": "640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rusted_Bolts.png",
+    "name": "Rusted Bolts",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rusted_Gear.png",
+    "name": "Rusted Gear",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rusted_Shut_Medical_Kit.png",
+    "name": "Rusted Shut Medical Kit",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rusted_Tools.png",
+    "name": "Rusted Tools",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Rusty_ARC_Steel.png",
+    "name": "Rusty ARC Steel",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Sample_Cleaner.png",
+    "name": "Sample Cleaner",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Sensors.png",
+    "name": "Sensors",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Sentinel_Firing_Core.png",
+    "name": "Sentinel Firing Core",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Shredder_Gryo.png",
+    "name": "Shredder Gyro",
+    "rarity": "Uncommon",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Signal_Amplifier.png",
+    "name": "Signal Amplifier",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Silver_Teaspoon_Set.png",
+    "name": "Silver Teaspoon Set",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Simple_Gun_Parts.png",
+    "name": "Simple Gun Parts",
+    "rarity": "Uncommon",
+    "sell_price": "$330",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\SnitchScannerPNG.png",
+    "name": "Snitch Scanner",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Speaker_Component.png",
+    "name": "Speaker Component",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Spectrometer.png",
+    "name": "Spectrometer",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Spectrum_Analyizer.png",
+    "name": "Spectrum Analyzer",
+    "rarity": "Epic",
+    "sell_price": "$3500",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Spotter_Relay.png",
+    "name": "Spotter Relay",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\SpringCushionPNG.png",
+    "name": "Spring Cushion",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Statuette.png",
+    "name": "Statuette",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Steel_Spring.png",
+    "name": "Steel Spring",
+    "rarity": "Uncommon",
+    "sell_price": "$300",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Surveyor_Vault.png",
+    "name": "Surveyor Vault",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Synthesized_Fuel.png",
+    "name": "Synthesized Fuel",
+    "rarity": "Rare",
+    "sell_price": "$700",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Syringe.png",
+    "name": "Syringe",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Tattered_ARC_Lining.png",
+    "name": "Tattered ARC Lining",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Tattered_Clothes.png",
+    "name": "Tattered Clothes",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Telemetry_Transceiver.png",
+    "name": "Telemetry Transceiver",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Thermostat.png",
+    "name": "Thermostat",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Tick_Pod.png",
+    "name": "Tick Pod",
+    "rarity": "Uncommon",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Toaster.png",
+    "name": "Toaster",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Torn_Book.png",
+    "name": "Torn Book",
+    "rarity": "Common",
+    "sell_price": "$1000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Torn_Blanket.png",
+    "name": "Torn Blanket",
+    "rarity": "Rare",
+    "sell_price": "$640",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Turbo_Pump.png",
+    "name": "Turbo Pump",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Unusable_Weapon.png",
+    "name": "Unusable Weapon",
+    "rarity": "Rare",
+    "sell_price": "$2000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Vase.png",
+    "name": "Vase",
+    "rarity": "Rare",
+    "sell_price": "$3000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Very_Comfortable_Pillow.png",
+    "name": "Very Comfortable Pillow",
+    "rarity": "Uncommon",
+    "sell_price": "$2000",
+    "category": "Trinket"
+  },
+  {
+    "icon": "icons\\Volcanic_Rock.png",
+    "name": "Volcanic Rock",
+    "rarity": "Common",
+    "sell_price": "$270",
+    "category": "Misc"
+  },
+  {
+    "icon": "icons\\Voltage_Converter.png",
+    "name": "Voltage Converter",
+    "rarity": "Rare",
+    "sell_price": "$500",
+    "category": "Topside Material"
+  },
+  {
+    "icon": "icons\\Wasp_Driver.png",
+    "name": "Wasp Driver",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Water_Filter.png",
+    "name": "Water Filter",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Water_Pump.png",
+    "name": "Water Pump",
+    "rarity": "Rare",
+    "sell_price": "$1000",
+    "category": "Recyclable"
+  },
+  {
+    "icon": "icons\\Wires.png",
+    "name": "Wires",
+    "rarity": "Uncommon",
+    "sell_price": "$200",
+    "category": "Topside Material"
+  }
+]
