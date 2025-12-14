@@ -223,7 +223,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Arc Raiders - Items Database</h1>
+        <h1>🎮 Arc Raiders - Items Database</h1>
 
         <div class="controls">
             <div class="control-group">
@@ -288,21 +288,36 @@
                     category: item.category || ''
                 }));
 
+                console.log('✅ Transformed', itemsData.length, 'items');
+
                 filteredItems = [...itemsData];
                 populateFilters();
                 renderItems();
                 updateStats();
+
+                console.log('✅ Initialization complete!');
             } catch (error) {
-                console.error('Error loading items:', error);
-                document.querySelector('.items-grid').innerHTML = 
-                    '<div style="grid-column:1/-1;text-align:center;padding:40px;"><h2 style="color:#ff6b6b;">Cannot Load Items</h2><p>Error: ' + error.message + '</p></div>';
+                console.error('❌ Error loading items:', error);
+                // More defensive error display
+                const grid = document.querySelector('.items-grid') || document.getElementById('itemsGrid');
+                if (grid) {
+                    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><h2 style="color:#ff6b6b;">Cannot Load Items</h2><p>Error: ' + error.message + '</p><p style="margin-top:10px;">Make sure arc_raiders_items_local.json is in the same directory.</p></div>';
+                } else {
+                    console.error('❌ Could not find items grid element!');
+                    alert('Error loading items: ' + error.message);
+                }
             }
         }
 
         function populateFilters() {
             const categorySelect = document.getElementById('categoryFilter');
+            if (!categorySelect) {
+                console.error('❌ categoryFilter element not found!');
+                return;
+            }
             categorySelect.innerHTML = '<option value="all">All Categories</option>';
             const categories = [...new Set(itemsData.map(item => item.category))].filter(c => c).sort();
+            console.log('✅ Found', categories.length, 'categories');
             categories.forEach(category => {
                 const option = document.createElement('option');
                 option.value = category;
@@ -342,29 +357,53 @@
         }
 
         function renderItems() {
-            const itemsGrid = document.querySelector('.items-grid');
+            const itemsGrid = document.querySelector('.items-grid') || document.getElementById('itemsGrid');
+            if (!itemsGrid) {
+                console.error('❌ Items grid element not found!');
+                return;
+            }
+
             if (filteredItems.length === 0) {
                 itemsGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px;font-size:1.2em;">No items found</p>';
                 return;
             }
+
             itemsGrid.innerHTML = filteredItems.map(item => {
                 const rarityClass = item.rarity.toLowerCase().replace(/[^a-z]/g, '');
                 return `<div class="item-card ${rarityClass}"><div class="item-icon"><img src="${item.icon_url}" alt="${item.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2212%22%3ENo Image%3C/text%3E%3C/svg%3E'"></div><div class="item-info"><h3 class="item-name">${item.name}</h3><div class="item-details"><span class="item-rarity rarity-${rarityClass}">${item.rarity}</span>${item.category ? `<span class="item-category">${item.category}</span>` : ''}</div><div class="item-price">${item.price}</div></div></div>`;
             }).join('');
+
+            console.log('✅ Rendered', filteredItems.length, 'items');
         }
 
         function updateStats() {
-            document.getElementById('totalItems').textContent = itemsData.length;
-            document.getElementById('showingItems').textContent = filteredItems.length;
+            const totalEl = document.getElementById('totalItems');
+            const shownEl = document.getElementById('showingItems');
+            if (totalEl) totalEl.textContent = itemsData.length;
+            if (shownEl) shownEl.textContent = filteredItems.length;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('🎮 Arc Raiders Items Database - Loading...');
-            loadItems();
-            document.getElementById('searchInput').addEventListener('input', filterItems);
-            document.getElementById('rarityFilter').addEventListener('change', filterItems);
-            document.getElementById('categoryFilter').addEventListener('change', filterItems);
-            document.getElementById('sortSelect').addEventListener('change', filterItems);
+            console.log('🎮 Arc Raiders Items Database - Initializing...');
+            console.log('📁 Loading from: arc_raiders_items_local.json');
+
+            // Wait a tiny bit to ensure DOM is fully ready
+            setTimeout(() => {
+                loadItems();
+            }, 100);
+
+            // Attach event listeners
+            const searchInput = document.getElementById('searchInput');
+            const rarityFilter = document.getElementById('rarityFilter');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortSelect = document.getElementById('sortSelect');
+
+            if (searchInput) searchInput.addEventListener('input', filterItems);
+            if (rarityFilter) rarityFilter.addEventListener('change', filterItems);
+            if (categoryFilter) categoryFilter.addEventListener('change', filterItems);
+            if (sortSelect) sortSelect.addEventListener('change', filterItems);
+
+            console.log('✅ Event listeners attached');
         });
     </script>
 </body>
