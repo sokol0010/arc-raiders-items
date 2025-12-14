@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc Raiders Items Database</title>
+    <title>Arc Raiders - Items Database</title>
     <style>
         * {
             margin: 0;
@@ -14,607 +14,402 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
+            color: #fff;
             padding: 20px;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         h1 {
             text-align: center;
-            color: white;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .filters {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .filter-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .controls {
+            display: flex;
             gap: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .filter-group {
+        .control-group {
             display: flex;
             flex-direction: column;
-        }
-
-        .filter-group label {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 0.95em;
-        }
-
-        .filter-group select,
-        .filter-group input {
-            padding: 10px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            background: white;
-            transition: border-color 0.3s;
-        }
-
-        .filter-group select:focus,
-        .filter-group input:focus {
-            outline: none;
-            border-color: #2a5298;
-        }
-
-        /* Multi-select styles */
-        .multi-select-wrapper {
-            position: relative;
-        }
-
-        .multi-select-display {
-            padding: 10px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            min-height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: border-color 0.3s;
-        }
-
-        .multi-select-display:hover {
-            border-color: #2a5298;
-        }
-
-        .multi-select-display.active {
-            border-color: #2a5298;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        .selected-items {
+            gap: 8px;
             flex: 1;
-            color: #555;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            min-width: 200px;
         }
 
-        .dropdown-arrow {
-            margin-left: 10px;
-            font-size: 0.8em;
-            color: #666;
+        label {
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .multi-select-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 2px solid #2a5298;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            max-height: 300px;
-            overflow-y: auto;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .multi-select-dropdown.active {
-            display: block;
-        }
-
-        .multi-select-option {
+        select, input {
             padding: 10px 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: background 0.2s;
-        }
-
-        .multi-select-option:hover {
-            background: #f0f0f0;
-        }
-
-        .multi-select-option input[type="checkbox"] {
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        .multi-select-option.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .price-inputs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        #searchBox {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            border: none;
+            border-radius: 5px;
             font-size: 1em;
-            transition: border-color 0.3s;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            cursor: pointer;
         }
 
-        #searchBox:focus {
-            outline: none;
-            border-color: #2a5298;
+        select:focus, input:focus {
+            outline: 2px solid #4CAF50;
         }
 
         .stats {
-            background: rgba(255,255,255,0.95);
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.1em;
-            color: #333;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        #itemGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            display: flex;
             gap: 20px;
-            padding: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            justify-content: center;
         }
 
+        .stat {
+            font-size: 1.1em;
+        }
+
+        .stat strong {
+            color: #4CAF50;
+        }
+
+        /* Grid для плиток */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Карточка предмета */
         .item-card {
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            aspect-ratio: 1;
         }
 
         .item-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
+        /* Иконка предмета - занимает максимум пространства */
         .item-icon {
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            height: auto;
+            flex: 1;
             object-fit: contain;
-            margin: 0 auto 15px;
-            display: block;
-            background: #f5f5f5;
+            margin-bottom: 8px;
             border-radius: 8px;
-            padding: 5px;
         }
 
+        /* Название предмета */
         .item-name {
             font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-            min-height: 2.5em;
-        }
-
-        .item-details {
             font-size: 0.85em;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .rarity {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 0.8em;
-            margin: 5px 0;
-        }
-
-        .rarity-common { background: #9e9e9e; color: white; }
-        .rarity-uncommon { background: #4caf50; color: white; }
-        .rarity-rare { background: #2196f3; color: white; }
-        .rarity-epic { background: #9c27b0; color: white; }
-        .rarity-legendary { background: #ff9800; color: white; }
-
-        .clear-filters {
+            margin-bottom: 5px;
+            line-height: 1.2;
+            max-height: 2.4em;
+            overflow: hidden;
             width: 100%;
-            padding: 10px 20px;
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
+        }
+
+        /* Цена предмета */
+        .item-price {
+            color: #4CAF50;
+            font-size: 1.1em;
             font-weight: bold;
-            transition: background 0.3s;
         }
 
-        .clear-filters:hover {
-            background: #d32f2f;
-        }
-
+        /* Адаптивность для мобильных */
         @media (max-width: 768px) {
-            .filter-row {
-                grid-template-columns: 1fr;
+            body {
+                padding: 10px;
             }
-            
-            #itemGrid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
+
+            .container {
+                padding: 15px;
             }
-            
+
             h1 {
                 font-size: 1.8em;
+                margin-bottom: 20px;
             }
+
+            .controls {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .control-group {
+                min-width: 100%;
+            }
+
+            .items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 10px;
+            }
+
+            .item-name {
+                font-size: 0.75em;
+            }
+
+            .item-price {
+                font-size: 0.95em;
+            }
+
+            .stats {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 8px;
+            }
+
+            .item-card {
+                padding: 8px;
+            }
+
+            .item-name {
+                font-size: 0.7em;
+                margin-bottom: 3px;
+            }
+
+            .item-price {
+                font-size: 0.85em;
+            }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎮 Arc Raiders Items Database</h1>
-        
-        <div class="filters">
-            <div class="filter-row">
-                <div class="filter-group">
-                    <label for="searchBox">🔍 Search:</label>
-                    <input type="text" id="searchBox" placeholder="Search items...">
-                </div>
-                
-                <div class="filter-group">
-                    <label for="typeFilter">Type:</label>
-                    <select id="typeFilter">
-                        <option value="">All Types</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="filter-row">
-                <div class="filter-group">
-                    <label>Rarity (Multi-select):</label>
-                    <div class="multi-select-wrapper">
-                        <div class="multi-select-display" id="rarityDisplay">
-                            <span class="selected-items">All Rarities</span>
-                            <span class="dropdown-arrow">▼</span>
-                        </div>
-                        <div class="multi-select-dropdown" id="rarityDropdown"></div>
-                    </div>
-                </div>
+        <h1>Arc Raiders - Items Database</h1>
 
-                <div class="filter-group">
-                    <label>Category (Multi-select):</label>
-                    <div class="multi-select-wrapper">
-                        <div class="multi-select-display" id="categoryDisplay">
-                            <span class="selected-items">All Categories</span>
-                            <span class="dropdown-arrow">▼</span>
-                        </div>
-                        <div class="multi-select-dropdown" id="categoryDropdown"></div>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <label for="priceFilter">Price Range:</label>
-                    <div class="price-inputs">
-                        <input type="number" id="minPrice" placeholder="Min ($)">
-                        <input type="number" id="maxPrice" placeholder="Max ($)">
-                    </div>
-                </div>
+        <div class="controls">
+            <div class="control-group">
+                <label for="rarityFilter">Rarity Filter:</label>
+                <select id="rarityFilter">
+                    <option value="all">All Rarities</option>
+                    <option value="Common">Common</option>
+                    <option value="Uncommon">Uncommon</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Epic">Epic</option>
+                    <option value="Legendary">Legendary</option>
+                </select>
             </div>
 
-            <div class="filter-row">
-                <div class="filter-group">
-                    <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
-                </div>
+            <div class="control-group">
+                <label for="searchInput">Search Items:</label>
+                <input type="text" id="searchInput" placeholder="Type to search...">
+            </div>
+
+            <div class="control-group">
+                <label for="sortSelect">Sort By:</label>
+                <select id="sortSelect">
+                    <option value="name">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                    <option value="rarity">Rarity</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                </select>
             </div>
         </div>
+        
+        <div class="stats">
+            <div class="stat">Total Items: <strong id="totalItems">0</strong></div>
+            <div class="stat">Showing: <strong id="showingItems">0</strong></div>
+        </div>
 
-        <div class="stats" id="stats">Loading items...</div>
-        <div id="itemGrid"></div>
+        <div id="itemsGrid" class="items-grid">
+        </div>
     </div>
 
     <script>
-        console.log('🎮 Arc Raiders Items Database - Initializing...');
-        
-        let allItems = [];
-        let selectedRarities = new Set();
-        let selectedCategories = new Set();
-        let allCategories = new Set();
-        let availableCategories = new Set();
+        let itemsData = [];
+        let filteredItems = [];
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.multi-select-dropdown').forEach(dd => {
-                dd.classList.remove('active');
-            });
-            document.querySelectorAll('.multi-select-display').forEach(dd => {
-                dd.classList.remove('active');
-            });
-        });
-
-        // Multi-select functionality
-        function initMultiSelect(displayId, dropdownId) {
-            const display = document.getElementById(displayId);
-            const dropdown = document.getElementById(dropdownId);
-            
-            display.addEventListener('click', (e) => {
-                e.stopPropagation();
-                dropdown.classList.toggle('active');
-                display.classList.toggle('active');
-                
-                // Close other dropdowns
-                document.querySelectorAll('.multi-select-dropdown').forEach(dd => {
-                    if (dd !== dropdown) {
-                        dd.classList.remove('active');
-                    }
-                });
-                document.querySelectorAll('.multi-select-display').forEach(dd => {
-                    if (dd !== display) {
-                        dd.classList.remove('active');
-                    }
-                });
-            });
-        }
-
-        function populateRarityFilter() {
-            const rarities = [...new Set(allItems.map(item => item.rarity))].sort();
-            const dropdown = document.getElementById('rarityDropdown');
-            
-            dropdown.innerHTML = rarities.map(rarity => `
-                <label class="multi-select-option">
-                    <input type="checkbox" value="${rarity}" onchange="handleRarityChange()">
-                    <span>${rarity}</span>
-                </label>
-            `).join('');
-        }
-
-        function populateCategoryFilter() {
-            const dropdown = document.getElementById('categoryDropdown');
-            const categories = Array.from(allCategories).sort();
-            
-            dropdown.innerHTML = categories.map(category => {
-                const isAvailable = availableCategories.has(category);
-                const isSelected = selectedCategories.has(category);
-                return `
-                    <label class="multi-select-option ${!isAvailable ? 'disabled' : ''}">
-                        <input type="checkbox" value="${category}" 
-                               ${isSelected && isAvailable ? 'checked' : ''}
-                               ${!isAvailable ? 'disabled' : ''}
-                               onchange="handleCategoryChange()">
-                        <span>${category}</span>
-                    </label>
-                `;
-            }).join('');
-        }
-
-        function updateAvailableCategories() {
-            if (selectedRarities.size === 0) {
-                availableCategories = new Set(allCategories);
-            } else {
-                availableCategories = new Set();
-                allItems.forEach(item => {
-                    if (selectedRarities.has(item.rarity)) {
-                        availableCategories.add(item.category);
-                    }
-                });
-            }
-
-            // Remove selected categories that are no longer available
-            selectedCategories.forEach(cat => {
-                if (!availableCategories.has(cat)) {
-                    selectedCategories.delete(cat);
+        // Load items from JSON file
+        async function loadItems() {
+            try {
+                const response = await fetch('arc_raiders_items_local.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            });
-        }
+                const data = await response.json();
 
-        function handleRarityChange() {
-            selectedRarities.clear();
-            document.querySelectorAll('#rarityDropdown input[type="checkbox"]:checked').forEach(cb => {
-                selectedRarities.add(cb.value);
-            });
-            
-            updateDisplayText('rarityDisplay', selectedRarities, 'All Rarities');
-            updateAvailableCategories();
-            populateCategoryFilter();
-            updateDisplayText('categoryDisplay', selectedCategories, 'All Categories');
-            filterItems();
-        }
+                console.log('✅ Loaded', data.length, 'items from JSON');
 
-        function handleCategoryChange() {
-            selectedCategories.clear();
-            document.querySelectorAll('#categoryDropdown input[type="checkbox"]:checked').forEach(cb => {
-                selectedCategories.add(cb.value);
-            });
-            
-            updateDisplayText('categoryDisplay', selectedCategories, 'All Categories');
-            filterItems();
-        }
+                // Transform data
+                itemsData = data.map(item => ({
+                    icon_url: item.icon ? item.icon.replace(/\\/g, '/') : '',
+                    name: item.name || '',
+                    rarity: item.rarity || '',
+                    price: item.sell_price || '',
+                    category: item.category || ''
+                }));
 
-        function updateDisplayText(displayId, selectedSet, defaultText) {
-            const display = document.getElementById(displayId);
-            const textSpan = display.querySelector('.selected-items');
-            
-            if (selectedSet.size === 0) {
-                textSpan.textContent = defaultText;
-                textSpan.style.color = '#555';
-                textSpan.style.fontWeight = 'normal';
-            } else {
-                textSpan.textContent = Array.from(selectedSet).join(', ');
-                textSpan.style.color = '#2a5298';
-                textSpan.style.fontWeight = 'bold';
+                console.log('✅ Transformed', itemsData.length, 'items');
+
+                filteredItems = [...itemsData];
+                populateFilters();
+                renderItems();
+                updateStats();
+
+                console.log('✅ Initialization complete!');
+            } catch (error) {
+                console.error('❌ Error loading items:', error);
+                // More defensive error display
+                const grid = document.querySelector('.items-grid') || document.getElementById('itemsGrid');
+                if (grid) {
+                    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><h2 style="color:#ff6b6b;">Cannot Load Items</h2><p>Error: ' + error.message + '</p><p style="margin-top:10px;">Make sure arc_raiders_items_local.json is in the same directory.</p></div>';
+                } else {
+                    console.error('❌ Could not find items grid element!');
+                    alert('Error loading items: ' + error.message);
+                }
             }
-        }
-
-        function clearAllFilters() {
-            selectedRarities.clear();
-            selectedCategories.clear();
-            document.getElementById('searchBox').value = '';
-            document.getElementById('typeFilter').value = '';
-            document.getElementById('minPrice').value = '';
-            document.getElementById('maxPrice').value = '';
-            
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            
-            updateDisplayText('rarityDisplay', selectedRarities, 'All Rarities');
-            updateAvailableCategories();
-            populateCategoryFilter();
-            updateDisplayText('categoryDisplay', selectedCategories, 'All Categories');
-            
-            filterItems();
-        }
-
-        function parsePrice(priceStr) {
-            return parseInt(priceStr.replace(/[$,]/g, '')) || 0;
         }
 
         function populateFilters() {
-            const typeFilter = document.getElementById('typeFilter');
-            
-            if (!typeFilter) {
-                console.error('❌ typeFilter element not found!');
+            const categorySelect = document.getElementById('categoryFilter');
+            if (!categorySelect) {
+                console.error('❌ categoryFilter element not found!');
                 return;
             }
-
-            const types = [...new Set(allItems.map(item => item.category))].sort();
-            
-            typeFilter.innerHTML = '<option value="">All Types</option>' + 
-                types.map(type => `<option value="${type}">${type}</option>`).join('');
-
-            console.log('✅ Filters populated');
+            categorySelect.innerHTML = '<option value="all">All Categories</option>';
+            const categories = [...new Set(itemsData.map(item => item.category))].filter(c => c).sort();
+            console.log('✅ Found', categories.length, 'categories');
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
         }
 
         function filterItems() {
-            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
-            const typeFilter = document.getElementById('typeFilter').value;
-            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
-            
-            const filteredItems = allItems.filter(item => {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedRarity = document.getElementById('rarityFilter').value;
+            const selectedCategory = document.getElementById('categoryFilter').value;
+            const sortBy = document.getElementById('sortSelect').value;
+
+            filteredItems = itemsData.filter(item => {
                 const matchesSearch = item.name.toLowerCase().includes(searchTerm);
-                const matchesType = !typeFilter || item.category === typeFilter;
-                const matchesRarity = selectedRarities.size === 0 || selectedRarities.has(item.rarity);
-                const matchesCategory = selectedCategories.size === 0 || selectedCategories.has(item.category);
-                
-                const itemPrice = parsePrice(item.sell_price);
-                const matchesPrice = itemPrice >= minPrice && itemPrice <= maxPrice;
-                
-                return matchesSearch && matchesType && matchesRarity && matchesCategory && matchesPrice;
+                const matchesRarity = selectedRarity === 'all' || item.rarity === selectedRarity;
+                const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+                return matchesSearch && matchesRarity && matchesCategory;
             });
-            
-            renderItems(filteredItems);
+
+            filteredItems.sort((a, b) => {
+                switch(sortBy) {
+                    case 'name': return a.name.localeCompare(b.name);
+                    case 'name-desc': return b.name.localeCompare(a.name);
+                    case 'price': return parseInt(a.price.replace(/[$,]/g, '')) - parseInt(b.price.replace(/[$,]/g, ''));
+                    case 'price-desc': return parseInt(b.price.replace(/[$,]/g, '')) - parseInt(a.price.replace(/[$,]/g, ''));
+                    case 'rarity':
+                        const rarityOrder = { 'Common': 1, 'Uncommon': 2, 'Uncomon': 2, 'Rare': 3, 'Epic': 4, 'Legendary': 5 };
+                        return (rarityOrder[a.rarity] || 0) - (rarityOrder[b.rarity] || 0);
+                    default: return 0;
+                }
+            });
+
+            renderItems();
+            updateStats();
         }
 
-        function renderItems(items) {
-            const grid = document.getElementById('itemGrid');
-            const stats = document.getElementById('stats');
-            
-            stats.textContent = `Showing ${items.length} of ${allItems.length} items`;
-            
-            if (items.length === 0) {
-                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: white; font-size: 1.2em;">No items found</p>';
+        function renderItems() {
+            const itemsGrid = document.querySelector('.items-grid') || document.getElementById('itemsGrid');
+            if (!itemsGrid) {
+                console.error('❌ Items grid element not found!');
                 return;
             }
-            
-            grid.innerHTML = items.map(item => {
-                const rarityClass = `rarity-${item.rarity.toLowerCase().replace(' ', '-')}`;
-                return `
-                    <div class="item-card">
-                        <img src="${item.icon}" alt="${item.name}" class="item-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23ddd%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2214%22%3E No Image%3C/text%3E%3C/svg%3E'">
-                        <div class="item-name">${item.name}</div>
-                        <span class="rarity ${rarityClass}">${item.rarity}</span>
-                        <div class="item-details">
-                            <div><strong>Category:</strong> ${item.category}</div>
-                            <div><strong>Sell:</strong> ${item.sell_price}</div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            
-            console.log(`✅ Rendered ${items.length} items`);
-        }
 
-        function transformData(rawItems) {
-            return rawItems.map(item => ({
-                ...item,
-                icon: item.icon.replace(/\\/g, '/')
-            }));
-        }
-
-        async function init() {
-            try {
-                const jsonPath = 'arc_raiders_items_local.json';
-                console.log('📁 Loading from:', jsonPath);
-                
-                const response = await fetch(jsonPath);
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                
-                const rawData = await response.json();
-                console.log('✅ Loaded', rawData.length, 'items from JSON');
-                
-                allItems = transformData(rawData);
-                console.log('✅ Transformed', allItems.length, 'items');
-                
-                // Store all categories
-                allItems.forEach(item => allCategories.add(item.category));
-                availableCategories = new Set(allCategories);
-                
-                populateFilters();
-                populateRarityFilter();
-                populateCategoryFilter();
-                
-                initMultiSelect('rarityDisplay', 'rarityDropdown');
-                initMultiSelect('categoryDisplay', 'categoryDropdown');
-                
-                renderItems(allItems);
-                
-                console.log('✅ Initialization complete!');
-            } catch (error) {
-                console.error('❌ Error loading data:', error);
-                document.getElementById('stats').innerHTML = 
-                    `<span style="color: red;">Error loading data: ${error.message}</span>`;
+            if (filteredItems.length === 0) {
+                itemsGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px;font-size:1.2em;">No items found</p>';
+                return;
             }
+
+            itemsGrid.innerHTML = filteredItems.map(item => {
+                const rarityClass = item.rarity.toLowerCase().replace(/[^a-z]/g, '');
+                return `<div class="item-card ${rarityClass}"><div class="item-icon"><img src="${item.icon_url}" alt="${item.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2212%22%3ENo Image%3C/text%3E%3C/svg%3E'"></div><div class="item-info"><h3 class="item-name">${item.name}</h3><div class="item-details"><span class="item-rarity rarity-${rarityClass}">${item.rarity}</span>${item.category ? `<span class="item-category">${item.category}</span>` : ''}</div><div class="item-price">${item.price}</div></div></div>`;
+            }).join('');
+
+            console.log('✅ Rendered', filteredItems.length, 'items');
         }
 
-        // Event listeners
+        function updateStats() {
+            const totalEl = document.getElementById('totalItems');
+            const shownEl = document.getElementById('showingItems');
+            if (totalEl) totalEl.textContent = itemsData.length;
+            if (shownEl) shownEl.textContent = filteredItems.length;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            init();
-            document.getElementById('searchBox').addEventListener('input', filterItems);
-            document.getElementById('typeFilter').addEventListener('change', filterItems);
-            document.getElementById('minPrice').addEventListener('input', filterItems);
-            document.getElementById('maxPrice').addEventListener('input', filterItems);
+            console.log('🎮 Arc Raiders Items Database - Initializing...');
+            console.log('📁 Loading from: arc_raiders_items_local.json');
+
+            // Wait a tiny bit to ensure DOM is fully ready
+            setTimeout(() => {
+                loadItems();
+            }, 100);
+
+            // Attach event listeners
+            const searchInput = document.getElementById('searchInput');
+            const rarityFilter = document.getElementById('rarityFilter');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortSelect = document.getElementById('sortSelect');
+
+            if (searchInput) searchInput.addEventListener('input', filterItems);
+            if (rarityFilter) rarityFilter.addEventListener('change', filterItems);
+            if (categoryFilter) categoryFilter.addEventListener('change', filterItems);
+            if (sortSelect) sortSelect.addEventListener('change', filterItems);
+
             console.log('✅ Event listeners attached');
         });
     </script>
